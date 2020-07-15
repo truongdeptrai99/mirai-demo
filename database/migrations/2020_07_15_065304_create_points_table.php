@@ -20,6 +20,7 @@ class CreatePointsTable extends Migration
             $table->integer('language');
             $table->integer('awareness');
             $table->integer('healthy');
+            $table->integer('total');
             $table->timestamps();
         });
     }
