@@ -12,6 +12,6 @@ class PointSeeder extends Seeder
      */
     public function run()
     {
-        factory(Point::class, 10)->create();
+        factory(Point::class, 20)->create();
     }
 }
