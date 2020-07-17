@@ -86,21 +86,20 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                   <button class="dropdown-item" type="submit" id="type" name="type" value = "xlsx">XLSX</button>
-                  <button class="dropdown-item" type="submit" id="type" name="type" value = "csv">CSV</button>
-                  <button class="dropdown-item" type="submit" id="type" name="type" value = "tsv">TSV</button>
+                  <button class="dropdown-item" type="submit" id="type" data-toggle="tooltip" title="" name="type" value = "csv">CSV</button>
                 </div>
               </div>
         </form>
     </div>
     <div class="container">
-        <h2>Bar Chart</h2>
+        <h2>欄図</h2>
         <div class="bar">
             <canvas id="bar"></canvas>
         </div>
         <br>
         <br>
         <br>
-        <h2>Hexagon Chart</h2>
+        <h2>六角図</h2>
         <div class="hexagon">
             <canvas id="hexagon"></canvas>
         </div>
@@ -153,7 +152,7 @@
     let hexagon = new Chart(bts, {
         type: 'radar',
         data: {
-            labels:  ['language', 'awareness', 'healthy', 'diligence', 'logic'],
+            labels:  ['言語能力', '意識', '健康', '出席', '理屈'],
             datasets: [
                 {
                     label: user1.name,
@@ -180,7 +179,7 @@
     let hexagon1 = new Chart(bts1, {
         type: 'radar',
         data: {
-            labels:  ['language', 'awareness', 'healthy', 'diligence', 'logic'],
+            labels:  ['言語能力', '意識', '健康', '出席', '理屈'],
             datasets: [
                 {
                     label: user2.name,
@@ -206,7 +205,7 @@
     let hexagon2 = new Chart(bts2, {
         type: 'radar',
         data: {
-            labels:  ['language', 'awareness', 'healthy', 'diligence', 'logic'],
+            labels:  ['言語能力', '意識', '健康', '出席', '理屈'],
             datasets: [
                 {
                     label: user3.name,

@@ -36,8 +36,8 @@ class ChartExport implements WithTitle, WithCharts
     public function radaChart()
     {
         $label      = [new DataSeriesValues('String', $this->label, null, 1)];
-        $categories = [new DataSeriesValues('String', $this->categories, null, 5)];
-        $values     = [new DataSeriesValues('Number', $this->values, null, 5)];
+        $categories = [new DataSeriesValues('String', $this->categories, null, 4)];
+        $values     = [new DataSeriesValues('Number', $this->values, null, 4)];
         $series = new DataSeries(
             DataSeries::TYPE_RADARCHART,
             null,
@@ -47,11 +47,11 @@ class ChartExport implements WithTitle, WithCharts
             $values,
             null,
             null,
-            DataSeries::STYLE_MARKER
+            DataSeries::STYLE_FILLED
         );
 
         $rada_chart  = new Chart(
-            'Chart',
+            'ひょう',
             new Title($this->user['name']),
             new Legend(Legend::POSITION_RIGHT, null, false),
             new PlotArea(new Layout(), [$series]),
@@ -62,7 +62,7 @@ class ChartExport implements WithTitle, WithCharts
         );
 
         $rada_chart->setTopLeftPosition('A1');
-        $rada_chart->setBottomRightPosition('F15');
+        $rada_chart->setBottomRightPosition('I25');
         return $rada_chart;
     }
 
@@ -84,7 +84,7 @@ class ChartExport implements WithTitle, WithCharts
         );
 
         $collum_chart  = new Chart(
-            'Chart',
+            'ひょう',
             new Title($this->user['name']),
             new Legend(Legend::POSITION_RIGHT, null, false),
             new PlotArea(new Layout(), [$series]),
@@ -94,8 +94,8 @@ class ChartExport implements WithTitle, WithCharts
             null
         );
 
-        $collum_chart->setTopLeftPosition('H1');
-        $collum_chart->setBottomRightPosition('M15');
+        $collum_chart->setTopLeftPosition('K1');
+        $collum_chart->setBottomRightPosition('S25');
         return $collum_chart;
     }
 

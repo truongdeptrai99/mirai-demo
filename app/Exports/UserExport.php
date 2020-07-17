@@ -7,8 +7,9 @@ use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 use Maatwebsite\Excel\Concerns\WithMultipleSheets;
 use Maatwebsite\Excel\Concerns\WithTitle;
+use Maatwebsite\Excel\Events\AfterSheet;
 
-class UserExport implements FromCollection, WithHeadings, WithTitle, ShouldAutoSize, WithMultipleSheets
+class UserExport implements FromCollection, WithHeadings, WithTitle, WithMultipleSheets
 {
     public function __construct($user1, $user2, $user3)
     {
@@ -30,13 +31,13 @@ class UserExport implements FromCollection, WithHeadings, WithTitle, ShouldAutoS
     public function headings(): array
     {
         return [
-            'Name',
-            'Language',
-            'Awareness',
-            'Diligence',
-            'Logic',
-            'Healthy',
-            'Total'
+            '名前',
+            '言語能力',
+            '意識',
+            '出席',
+            '理屈',
+            '健康',
+            '合計'
         ];
     }
 
@@ -65,5 +66,43 @@ class UserExport implements FromCollection, WithHeadings, WithTitle, ShouldAutoS
         $sheets[2] = new ChartExport($this->user2, 'Sheet1!$A$3', 'Sheet1!$B$1:$F$1', 'Sheet1!$B$3:$F$3');
         $sheets[3] = new ChartExport($this->user3, 'Sheet1!$A$4', 'Sheet1!$B$1:$F$1', 'Sheet1!$B$4:$F$4');
         return $sheets;
+    }
+
+    // public function columnFormats(): array
+    // {
+    //     $styleArray = [
+    //         'font' => [
+    //             'bold' => true,
+    //         ],
+    //         'alignment' => [
+    //             'vertical' => \PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER,
+    //             'horizontal' => \PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER,
+    //         ],
+    //         'fill' => [
+    //             'fillType' => \PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID,
+    //             'startColor' => [
+    //                 'argb' => '0070C0',
+    //             ],
+    //             'endColor' => [
+    //                 'argb' => '0070C0',
+    //             ],
+    //         ],
+    //     ];
+    //     return $styleArray;
+    // }
+    public function registerEvents(): array
+    {
+        return [
+            AfterSheet::class => function (AfterSheet $event) {
+                $event->sheet->styleCells(
+                    'A1:G4',
+                    [
+                        'alignment' => [
+                            'horizontal' => \PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_RIGHT,
+                        ],
+                    ]
+                );
+            },
+        ];
     }
 }
