@@ -16,3 +16,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'PointController@index');
 Route::post('/store', 'PointController@store')->name('store');
+Route::post('/export', 'PointController@export')->name('export');

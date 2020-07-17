@@ -32,6 +32,14 @@
                 <label for="healthy">Healthy</label>
                 <input type="number" name="healthy[0]" class="form-control" id="healthy" placeholder="Enter point healthy">
             </div>
+            <div class="form-group">
+                <label for="diligence">Diligence</label>
+                <input type="number" name="diligence[0]" class="form-control" id="diligence" placeholder="Enter point diligence">
+            </div>
+            <div class="form-group">
+                <label for="logic">Logic</label>
+                <input type="number" name="logic[0]" class="form-control" id="logic" placeholder="Enter point logic">
+            </div>
 
 
             <h3>Personal 2</h3>
@@ -51,6 +59,15 @@
                 <label for="healthy1">Healthy</label>
                 <input type="number" name="healthy[1]" class="form-control" id="healthy1" placeholder="Enter point healthy">
             </div>
+            <div class="form-group">
+                <label for="diligence1">Diligence</label>
+                <input type="number" name="diligence[1]" class="form-control" id="diligence1" placeholder="Enter point diligence">
+            </div>
+
+            <div class="form-group">
+                <label for="logic1">Logic</label>
+                <input type="number" name="logic[1]" class="form-control" id="logic1" placeholder="Enter point logic">
+            </div>
 
             <h3>Personal 3</h3>
             <div class="form-group">
@@ -68,6 +85,14 @@
             <div class="form-group">
                 <label for="healthy2">Healthy</label>
                 <input type="number" name="healthy[2]" class="form-control" id="healthy2" placeholder="Enter point healthy">
+            </div>
+            <div class="form-group">
+                <label for="diligence2">Diligence</label>
+                <input type="number" name="diligence[2]" class="form-control" id="diligence2" placeholder="Enter point diligence">
+            </div>
+            <div class="form-group">
+                <label for="logic2">Logic</label>
+                <input type="number" name="logic[2]" class="form-control" id="logic2" placeholder="Enter point logic">
             </div>
             <button type="submit" class="btn btn-primary">Send</button>
         </form>
